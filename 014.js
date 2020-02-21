@@ -1,6 +1,6 @@
 let startTime = Date.now()
 const MAX_NUMBER = 10000000 // Max number we'll test.
-const METHOD = 'smart'
+const METHOD = 'smarter'
 
 // Store the longest chain length and corresponding number
 let longestChain = {
