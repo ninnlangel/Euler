@@ -1,5 +1,5 @@
 const fs = require('fs');
-const numbers = fs.readFileSync('./013/numbers.txt', 'utf8').split('\n').map(n => parseInt(n));
+const numbers = fs.readFileSync('./assets/013_numbers', 'utf8').split('\n').map(n => parseInt(n));
 
 let total = numbers.reduce((tot, num) => tot + num);
 
