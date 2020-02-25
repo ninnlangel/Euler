@@ -5,8 +5,8 @@ function sumOfProperDivisors(number) {
     let length = Math.floor(number / 2);
     
     for (let i = 1; i <= length; i++) {
-        let remainder = number % i;
-        if (remainder == 0) { sum += i };
+        let isDividor = (number % i) == 0;
+        if (isDividor) { sum += i };
     }
 
     return sum;
