@@ -1,12 +1,15 @@
 const MAXIMUM = 10000;
 
+function isDivisor(i) {
+    return (number % i) == 0;
+}
+
 function sumOfProperDivisors(number) {
     let sum = 0;
     let length = Math.floor(number / 2);
     
     for (let i = 1; i <= length; i++) {
-        let isDividor = (number % i) == 0;
-        if (isDividor) { sum += i };
+        if (isDivisor(i)) { sum += i };
     }
 
     return sum;
