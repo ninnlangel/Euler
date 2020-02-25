@@ -1,4 +1,4 @@
-const MAXIMUM = 1000;
+const MAXIMUM = 10000;
 
 function sumOfProperDivisors(number) {
     let sum = 0;
@@ -22,8 +22,11 @@ let result = [];
 for (let i = 0; i <= MAXIMUM; i++) {
     let number = amicablePair(i);
     if (number != false) {
-        result.push([number, i])
+        result.push(number, i)
     }
 }
+
+result = Array.from(new Set(result));
+result = result.reduce((sum, n) => sum + n);
 
 console.log(result);
