@@ -30,9 +30,9 @@ function sumOfProperDivisors(number) {
 }
 
 function getAmicablePartner(number) {
-    let amicablePair = sumOfProperDivisors(number);
-    if (sumOfProperDivisors(amicablePair) == number && amicablePair != number) {
-        return amicablePair;
+    let amicablePartner = sumOfProperDivisors(number);
+    if (sumOfProperDivisors(amicablePartner) == number && amicablePartner != number) {
+        return amicablePartner;
     } else {
         return null;
     }
@@ -42,11 +42,9 @@ function findAmicablePairsWithinRange(rangeMin, rangeMax) {
     let amicablePairs = new Set(); // Using a set avoids having to manage duplicates
     for (let i = rangeMin; i <= rangeMax; i++) {
         let pair = getAmicablePartner(i);
-        if (pair != null) {
-            if (pair <= rangeMax) {
-                amicablePairs.add(pair);
-                amicablePairs.add(i);
-            }
+        if (pair != null && pair <= rangeMax) {
+            amicablePairs.add(pair);
+            amicablePairs.add(i);
         }
     }
     return amicablePairs;
