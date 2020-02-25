@@ -29,7 +29,7 @@ function sumOfProperDivisors(number) {
     return sum;
 }
 
-function getAmicablePair(number) {
+function getAmicablePartner(number) {
     let amicablePair = sumOfProperDivisors(number);
     if (sumOfProperDivisors(amicablePair) == number && amicablePair != number) {
         return amicablePair;
@@ -41,7 +41,7 @@ function getAmicablePair(number) {
 function findAmicablePairsWithinRange(rangeMin, rangeMax) {
     let amicablePairs = new Set(); // Using a set avoids having to manage duplicates
     for (let i = rangeMin; i <= rangeMax; i++) {
-        let pair = getAmicablePair(i);
+        let pair = getAmicablePartner(i);
         if (pair != null) {
             if (pair <= rangeMax) {
                 amicablePairs.add(pair);
@@ -53,7 +53,7 @@ function findAmicablePairsWithinRange(rangeMin, rangeMax) {
 }
 
 // Running with exercise specifics :
-let amicablePairs = findAmicablePairsWithinRange(1, 100000);
+let amicablePairs = findAmicablePairsWithinRange(1, 10000);
 
 // Summing pairs and displaying result.
 let result = Array.from(amicablePairs); // Must convert set to array for reduction.
