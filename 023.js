@@ -34,7 +34,7 @@ function isDivisor(num, div) {
 function sumOfProperDivisors(number) {
     let length = Math.floor(number / 2);
     let sum = 0;
-    for (let i = 1; i <= length; i++) {
+    for (let i = 0; i <= length; i++) {
         if (isDivisor(number, i)) {
             sum += i
         }
@@ -52,11 +52,8 @@ function isAbundant(num) {
 
 function isPairOfAbundantNumbers(number) {
     let limit = Math.floor(number / 2);
-    for (let a of abundantNumbers) {
-        if (a > limit) {
-            return false;
-        }
-        if (abundantNumbers[a] && abundantNumbers[number - a]) {
+    for (let i = 0; i <= limit; i++) {
+        if (abundantNumbers[i] && abundantNumbers[number - i]) {
             return true;
         }
     }
@@ -71,7 +68,7 @@ for (let i = 0; i <= max; i++) {
 }
 
 // Remove from total all abundantNumbers which are writable as abundant pairs
-for (let i = 1; i < 28124; i++) {
+for (let i = 0; i <= max; i++) {
     if (isPairOfAbundantNumbers(i)) {
         result -= i;
     }
